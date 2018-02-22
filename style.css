@@ -9,6 +9,7 @@ html, body {
     background-color: rgba(109, 104, 104, 0.87);
     padding: 3% 3%;
     margin: 5% 30% 5% 30%;
+    min-width: 350px;
 }
 .calculator{
     background-color: rgba(241, 237, 237, 0.7);
@@ -17,8 +18,8 @@ html, body {
     box-shadow: 4px 9px 20px 0 rgb(43, 41, 41) , inset -3px -3px 16px 0px rgb(43, 41, 41) ;
     border-radius: 25px;
     padding: 2%;
+    width: 450px;
     min-width: 330px;
-    max-width: 450px;
     /* margin: 0 auto; */
 }
 .calc-header{
