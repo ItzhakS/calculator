@@ -17,6 +17,7 @@ var minus = document.querySelector('.minus')
 var divide = document.querySelector('.divide')
 var multiply = document.querySelector('.multiply')
 var equals = document.querySelector('.equals')
+var point = document.querySelector('.point')
 
 one.addEventListener('click', displayBtnPress)
 two.addEventListener('click', displayBtnPress)
@@ -32,20 +33,32 @@ plus.addEventListener('click', displayBtnPress)
 minus.addEventListener('click', displayBtnPress)
 multiply.addEventListener('click', displayBtnPress)
 divide.addEventListener('click', displayBtnPress)
+point.addEventListener('click', displayBtnPress)
 
 allClear.addEventListener('click', clearAll)
 clear.addEventListener('click', deleteInput)
+equals.addEventListener('click', resultEquals)
+var numbersArr = []
 
 function displayBtnPress() {
-    if (workingNumbers.innerHTML == '0')
+    if (workingNumbers.innerHTML == '0'){
         workingNumbers.innerHTML = this.value;
-    else
-        workingNumbers.innerHTML += this.value; 
+        numbersArr.push(this.value)
+    }
+    else{
+        workingNumbers.innerHTML += this.value;
+        numbersArr.push(this.value)
+    }
 }
 
 function clearAll() {
     workingNumbers.innerHTML = '0'
+    result.innerHTML = '0'
 }
 function deleteInput() {
     workingNumbers.innerHTML = workingNumbers.innerHTML.slice(0, -1)
+}
+
+function resultEquals(){
+    result.innerHTML = eval(workingNumbers.innerHTML)
 }
